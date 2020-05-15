@@ -9,6 +9,7 @@ users={
     "ms user": "user"
 }
 
+
 @app.route("/", methods=["GET", "POST"])
 def index():
     if request.method == 'POST':
@@ -22,14 +23,6 @@ def index():
 @app.route("/cabinet")
 def cabinet():
     return render_template('cabinet.html')
-
-@app.route('/task3/static/img/<path:filename>')
-def index1 (filename):
-    return send_from_directory('img', filename)
-
-@app.route('/task3/static/css/<path:filename>')
-def index2 (filename):
-    return send_from_directory('css', filename)
 
 if __name__ == "__main__":
     app.run(host='localhost', port=5000, debug=True)
